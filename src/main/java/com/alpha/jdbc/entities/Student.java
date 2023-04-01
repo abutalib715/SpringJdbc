@@ -1,4 +1,4 @@
-package com.alpha.jdbc;
+package com.alpha.jdbc.entities;
 
 public class Student {
 	private Integer id;
