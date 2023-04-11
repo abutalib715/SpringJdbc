@@ -12,15 +12,27 @@ public class App {
 		// SPRING JDBC TEMPLATE
 		ApplicationContext context = new ClassPathXmlApplicationContext("com/alpha/jdbc/config.xml");
 		StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
-		
+
+//		//INSERT DATA
+//		Student student = new Student();
+//		student.setId(103);
+//		student.setName("Mainul");
+//		student.setCity("CTG");
+//		
+//		Integer result = studentDao.insert(student);
+//		
+//		System.out.println("Number of record inserted .." + result);
+//		
+
+		// UPDATE DATA
 		Student student = new Student();
 		student.setId(103);
-		student.setName("Mainul");
-		student.setCity("CTG");
-		
-		Integer result = studentDao.insert(student);
-		
-		System.out.println("Numbe of record inserted .." + result);
+		student.setName("Khaled");
+		student.setCity("DHK");
+
+		Integer result = studentDao.update(student);
+
+		System.out.println("Number of record updated .." + result);
 
 	}
 }
