@@ -1,5 +1,6 @@
 package com.alpha.jdbc;
 
+import com.alpha.jdbc.entities.Student;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -9,7 +10,7 @@ public class App {
 	public static void main(String[] args) {
 		System.out.println("My program is running");
 		// SPRING JDBC TEMPLATE
-		ApplicationContext context = new ClassPathXmlApplicationContext("com/alpha/jdbc/config.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
 		StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
 
 //		//INSERT DATA
@@ -17,7 +18,7 @@ public class App {
 //		student.setId(103);
 //		student.setName("Mainul");
 //		student.setCity("CTG");
-//		
+//
 //		Integer result = studentDao.insert(student);
 //		
 //		System.out.println("Number of record inserted .." + result);
@@ -33,10 +34,14 @@ public class App {
 //
 //		System.out.println("Number of record updated .." + result);
 
-		// DELETE DATA
-		Integer result = studentDao.delete(103);
+//		// DELETE DATA
+//		Integer result = studentDao.delete(103);
+//
+//		System.out.println("Number of record deleted .." + result);
 
-		System.out.println("Number of record deleted .." + result);
+		//GET DATA BY ID
+		Student student = studentDao.getStudent(103);
+		System.out.println(student);
 
 	}
 }
