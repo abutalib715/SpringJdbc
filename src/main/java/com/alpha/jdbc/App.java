@@ -6,6 +6,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.alpha.jdbc.dao.StudentDao;
 
+import java.util.List;
+
 public class App {
 	public static void main(String[] args) {
 		System.out.println("My program is running");
@@ -39,9 +41,14 @@ public class App {
 //
 //		System.out.println("Number of record deleted .." + result);
 
-		//GET DATA BY ID
-		Student student = studentDao.getStudent(103);
-		System.out.println(student);
+//		//GET DATA BY ID
+//		Student student = studentDao.getStudent(103);
+//		System.out.println(student);
+
+		List<Student> students = studentDao.getAllStudents();
+		for (Student student: students){
+			System.out.println(student);
+		}
 
 	}
 }
