@@ -5,4 +5,5 @@ import com.alpha.jdbc.entities.Student;
 public interface StudentDao {
 	public Integer insert(Student student);
 	public Integer update(Student student);
+	public Integer delete(Integer studentId);
 }
